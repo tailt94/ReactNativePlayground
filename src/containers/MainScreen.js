@@ -3,9 +3,10 @@ import { Button, ScrollView, StyleSheet } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { Colors, } from 'react-native/Libraries/NewAppScreen'
 import { GlobalActions } from '../redux/actions'
+import LoginForm from './LoginForm'
 
 const MainScreen: React.FC = React.memo((props) => {
-  const value = useSelector(state => state.count)
+  const value = useSelector(state => state.test.count)
   const dispatch = useDispatch()
 
   function onPress () {
@@ -17,6 +18,7 @@ const MainScreen: React.FC = React.memo((props) => {
       contentInsetAdjustmentBehavior="automatic"
       style={ styles.scrollView }>
       <Button title={ `${ value }` } onPress={ onPress }/>
+      <LoginForm />
     </ScrollView>
   )
 })

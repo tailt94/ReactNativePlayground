@@ -1,12 +1,13 @@
-import { createStore } from 'redux'
+import { createStore, combineReducers } from 'redux'
+import { reducer as formReducer } from 'redux-form'
 import { GlobalActions } from './actions'
-import reactotron from '../setup/reactotron'
+import createReactotron from '../setup/reactotron'
 
 const initialState = {
   count: 0
 }
 
-function rootReducer (state = initialState, action) {
+function testReducer (state = initialState, action) {
   switch (action.type) {
     case GlobalActions.INCREASE:
       return { ...state, count: state.count + 1 }
@@ -17,7 +18,13 @@ function rootReducer (state = initialState, action) {
   }
 }
 
+const rootReducer = combineReducers({
+  test: testReducer,
+  form: formReducer
+})
+
 function initStore () {
+  const reactotron = createReactotron()
   const store = createStore(rootReducer, reactotron.createEnhancer())
   return store
 }
