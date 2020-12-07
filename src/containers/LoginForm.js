@@ -6,7 +6,7 @@ const TextField = props => {
   console.log('TextField', props)
   const { input: { value, onChange } } = props
   return (
-    <TextInput onChangeText={(text) => onChange(text)}/>
+    <TextInput value={value} onChangeText={(text) => onChange(text)}/>
   )
 }
 
@@ -42,5 +42,9 @@ const styles = StyleSheet.create({
 })
 
 export default reduxForm({
-  form: 'login'
+  form: 'login',
+  initialValues: {
+    username: 'taile',
+    password: '123456'
+  }
 })(LoginForm)
