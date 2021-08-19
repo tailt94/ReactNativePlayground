@@ -3,7 +3,6 @@ import { TextInput, Text, View, StyleSheet, Button } from 'react-native'
 import { Field, reduxForm } from 'redux-form'
 
 const TextField = props => {
-  console.log('TextField', props)
   const { input: { value, onChange } } = props
   return (
     <TextInput value={value} onChangeText={(text) => onChange(text)}/>
@@ -12,9 +11,7 @@ const TextField = props => {
 
 const LoginForm: React.FC = React.memo(props => {
   const { handleSubmit } = props
-  console.log('PROPS', props)
   function onSubmit (values) {
-    console.log('ON_SUBMIT', values)
   }
 
   return (

@@ -17,7 +17,7 @@ function createReactotron () {
     .use(reactotronRedux())
     .connect()
 
-  console.log = Reactotron.logImportant
+  // console.log = Reactotron.logImportant
   // console.warn = Reactotron.warn
   // console.error = Reactotron.error
 
