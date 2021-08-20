@@ -1,4 +1,4 @@
-package com.reactnativeplayground;
+package com.tailtrnplayground;
 
 import com.facebook.react.ReactActivity;
 
